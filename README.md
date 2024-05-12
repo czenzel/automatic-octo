@@ -15,3 +15,6 @@ I decided to re-develop the course with the latest concepts and materials applic
 7. Notifications of Data
 8. Debugging the Project
 
+## Course Distribution
+
+The course lecture, videos, quizes, and code testing will be available via Udemy, TakeLessons, and other platforms as applicable.
