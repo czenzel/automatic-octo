@@ -1,0 +1,8 @@
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>Allow the App to scan for Bluetooth Devices that are nearby using location services.</string>
+<key>NSLocationUsageDescription</key>
+<string>Allow the App to scan for Bluetooth Devices that are nearby using location services.</string>
+<key>NSBluetoothAlwaysUsageDescription</key>
+<string>Allow the App to use and access Bluetooth Devices in the background.</string>
+<key>NSBluetoothPeripheralUsageDescription</key>
+<string>Allow the App to use and access Bluetooth Devices while using the application.</string>
