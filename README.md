@@ -14,6 +14,7 @@ I decided to re-develop the course with the latest concepts and materials applic
 6. Writing Data
 7. Notifications of Data
 8. Debugging the Project
+9. Creating an Android Virtual Environment
 
 ## Course Distribution
 
