@@ -7,14 +7,15 @@ I decided to re-develop the course with the latest concepts and materials applic
 ## Course Structure
 
 1. Creating the Project
-2. Requesting Permissions
-3. Scanning for Devices
-4. Connecting and Disconnecting from Devices
-5. Reading Data
-6. Writing Data
-7. Notifications of Data
-8. Debugging the Project
-9. Creating an Android Virtual Environment
+2. Work on Dependency Injection
+3. Requesting Permissions
+4. Scanning for Devices
+5. Connecting and Disconnecting from Devices
+6. Reading Data
+7. Writing Data
+8. Notifications of Data
+9. Debugging the Project
+10. Creating an Android Virtual Environment
 
 ## Course Distribution
 
