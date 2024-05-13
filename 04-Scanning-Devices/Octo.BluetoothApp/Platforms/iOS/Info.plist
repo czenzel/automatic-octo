@@ -36,5 +36,13 @@
 	<string>Allow the App to use and access Bluetooth Devices in the background.</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>Allow the App to use and access Bluetooth Devices while using the application.</string>
+	<key>CFBundleIdentifier</key>
+	<string></string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>external-accessory</string>
+		<string>bluetooth-central</string>
+		<string>fetch</string>
+	</array>
 </dict>
 </plist>

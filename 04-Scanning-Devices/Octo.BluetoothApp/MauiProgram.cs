@@ -17,7 +17,8 @@ namespace Octo.BluetoothApp
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 })
-                .ConfigureShiny();
+                .ConfigureShiny()
+                .ConfigurePages();
 
 #if DEBUG
     		builder.Logging.AddDebug();
@@ -26,10 +27,16 @@ namespace Octo.BluetoothApp
             return builder.Build();
         }
 
-        private static void ConfigureShiny(this MauiAppBuilder builder)
+        private static MauiAppBuilder ConfigureShiny(this MauiAppBuilder builder)
         {
             builder.Services.AddShinyCoreServices();
             builder.Services.AddBluetoothLE();
+            return builder;
+        }
+
+        private static MauiAppBuilder ConfigurePages(this MauiAppBuilder builder)
+        {
+            return builder;
         }
     }
 }

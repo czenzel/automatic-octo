@@ -1,26 +1,39 @@
 ﻿using Octo.BluetoothApp.Pages;
+using Shiny;
+using Shiny.BluetoothLE;
 
 namespace Octo.BluetoothApp
 {
     public partial class MainPage : BluetoothContentPage
     {
-        int count = 0;
+        private readonly IBleManager? _bleManager = null;
+
+        public ObservableList<ScanResult> ScanResults { get; } = new ObservableList<ScanResult>();
 
         public MainPage()
         {
             InitializeComponent();
+            _bleManager = (App.Current as App)!.Services.GetService<IBleManager>();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        protected override void OnAppearing()
         {
-            count++;
+            base.OnAppearing();
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
+            this.BluetoothPermissions += MainPage_BluetoothPermissions;
+        }
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
+        private void MainPage_BluetoothPermissions(object sender)
+        {
+            _bleManager!.StopScan();
+
+            _bleManager!.Scan().Subscribe(scanResult =>
+            {
+                if (ScanResults.Any(a => a.Peripheral.Uuid == scanResult.Peripheral.Uuid))
+                    return;
+
+                ScanResults.Add(scanResult);
+            });
         }
     }
 

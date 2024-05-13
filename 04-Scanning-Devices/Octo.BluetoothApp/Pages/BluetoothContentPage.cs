@@ -8,6 +8,9 @@ namespace Octo.BluetoothApp.Pages
 {
     public partial class BluetoothContentPage : ContentPage
     {
+        internal delegate void OnBluetoothPermissions(object sender);
+        internal event OnBluetoothPermissions? BluetoothPermissions;
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -28,18 +31,14 @@ namespace Octo.BluetoothApp.Pages
                 {
                     await this.DisplayAlert("Location Permissions Required", "Location Permissions are required to scan for Bluetooth LE Devices", "Okay");
                 }
-            }
-
-            var bluetoothPermission = await Permissions.RequestAsync<Permissions.Bluetooth>();
-
-            if (bluetoothPermission != PermissionStatus.Granted)
-            {
-                bluetoothPermission = await Permissions.RequestAsync<Permissions.Bluetooth>();
-
-                if (bluetoothPermission != PermissionStatus.Granted)
+                else
                 {
-                    await this.DisplayAlert("Bluetooth Permissions Required", "Bluetooth Permissions are required to scan and connect for/to Bluetooth LE Devices", "Okay");
+                    BluetoothPermissions?.Invoke(this);
                 }
+            }
+            else
+            {
+                BluetoothPermissions?.Invoke(this);
             }
         }
     }
