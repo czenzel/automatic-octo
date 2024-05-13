@@ -5,7 +5,8 @@
              x:Class="Octo.BluetoothApp.MainPage">
 
     <ListView HorizontalOptions="FillAndExpand"
-              VerticalOptions="FillAndExpand">
+              VerticalOptions="FillAndExpand"
+              ItemsSource="{Binding ScanResults}">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <Grid>

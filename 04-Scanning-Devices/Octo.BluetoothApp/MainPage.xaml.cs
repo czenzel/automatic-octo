@@ -14,6 +14,7 @@ namespace Octo.BluetoothApp
         {
             InitializeComponent();
 
+            this.BindingContext = this;
             this.BluetoothPermissions += MainPage_BluetoothPermissions;
             _bleManager = (App.Current as App)!.Services.GetService<IBleManager>();
         }
