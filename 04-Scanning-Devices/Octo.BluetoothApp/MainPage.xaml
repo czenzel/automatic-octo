@@ -18,7 +18,8 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <Label Grid.Row="0" Grid.Column="0" Text="{Binding Peripheral.Name}" />
+                    <Label Grid.Row="0" Grid.Column="0" Text="{Binding Peripheral.Uuid}" />
+                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding Rssi}" />
                 </Grid>
             </DataTemplate>
         </ListView.ItemTemplate>

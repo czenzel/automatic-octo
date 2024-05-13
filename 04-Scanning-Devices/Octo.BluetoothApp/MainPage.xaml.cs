@@ -13,14 +13,14 @@ namespace Octo.BluetoothApp
         public MainPage()
         {
             InitializeComponent();
+
+            this.BluetoothPermissions += MainPage_BluetoothPermissions;
             _bleManager = (App.Current as App)!.Services.GetService<IBleManager>();
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
-            this.BluetoothPermissions += MainPage_BluetoothPermissions;
         }
 
         private void MainPage_BluetoothPermissions(object sender)
